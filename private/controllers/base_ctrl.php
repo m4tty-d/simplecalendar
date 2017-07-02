@@ -3,6 +3,7 @@
 class Base_ctrl {
 
     protected $model = null;
+    protected $data = array();
 
     public function __construct() {
 
@@ -15,7 +16,7 @@ class Base_ctrl {
 
     }
 
-    public function loadView($view) {
+    public function loadView($view, $data=array()) {
         require VIEW_PATH . $view . '.php';
     }
 }

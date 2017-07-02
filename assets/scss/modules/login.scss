@@ -1,0 +1,90 @@
+body {
+  background-color: #F4F4F4;
+}
+
+section.login {
+  font-family: 'Crimson Text', serif;
+
+  .container {
+    width: 320px;
+    height: 285px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      background-color: $primary-background;
+      -webkit-box-shadow: 10px 10px 29px -13px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 29px -13px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 29px -13px rgba(0,0,0,0.75);
+
+      &.invalid {
+        animation: shake .5s linear;
+      }
+    }
+
+    input {
+      background-color: $primary-background;
+      font-weight: 600;
+      color: white;
+      width: calc(100% - 50px);
+      height: 35px;
+      margin: 10px 20px;
+      padding-left: 10px;
+      border: none;
+      border-bottom: solid 2px #D0D0D0;
+      outline: none;
+
+      &:focus {
+        border-color: white;
+        transition: border-color .5s ease-in;
+      }
+
+      &:first-child {
+        margin-top: 35px;
+      }
+    }
+
+    button {
+      background-color: $primary-background;
+      font-weight: 600;
+      color: white;
+      width: calc(100% - 40px);
+      height: 45px;
+      margin: 40px 20px;
+      border: solid 2px #D0D0D0;
+
+      &:hover {
+        border-color: white;
+        background-color: white;
+        color: $primary-background;
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+@-webkit-keyframes shake {
+  8%, 41% {
+    transform: translateX(-10px);
+  }
+  25%, 58% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  92% {
+    transform: translateX(5px);
+  }
+  0%, 100% {
+    transform: translateX(0);
+  }
+}

@@ -2,7 +2,7 @@
 
 require CORE_PATH . 'Database.php';
 
-class Base {
+class BaseModel {
 
     protected $db;
 

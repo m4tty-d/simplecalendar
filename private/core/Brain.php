@@ -35,8 +35,19 @@ class Brain {
 
             } else if(method_exists($this->controller, $this->action)) {
 
+                if(!empty($this->url_parts)) {
 
+                    call_user_func(array($this->controller, $this->action), $this->url_parts);
 
+                } else {
+
+                    $this->controller->{$this->action}();
+
+                }
+
+            } else {
+
+                require VIEW_PATH . '404.php';
             }
 
         }

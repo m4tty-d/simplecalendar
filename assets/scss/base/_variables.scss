@@ -1,0 +1,17 @@
+
+// Colors
+
+$eclipse : #373737;
+
+$primary-background : $eclipse;
+
+// Breakpoints
+
+$breakpoints: (
+        "mobile":        320px,
+        "mobile-wide":   480px,
+        "tablet":       768px,
+        "tablet-wide":  1024px,
+        "desktop":      1248px,
+        "desktop-wide": 1440px
+);
