@@ -26,6 +26,10 @@ class Admin_ctrl extends Base_ctrl {
 
         else {
 
+            $this->loadModel('users');
+
+            $this->data['user'] = $this->model->getUserById($_SESSION['user_id']);
+
             $this->loadModel('events');
 
             $events = $this->model->getAllEvents();
@@ -34,10 +38,24 @@ class Admin_ctrl extends Base_ctrl {
 
             $this->loadView('admin/metas');
             $this->loadView('admin/list', $this->data);
+            $this->loadView('admin/footer', $this->data);
             $this->loadView('admin/end');
 
         }
 
+    }
+
+    public function insert() {
+
+        $name = $_POST['name'];
+        $from = $_POST['from'];
+        $to = $_POST['to'];
+        $created_by = $_SESSION['user_id'];
+
+        $this->loadModel('events');
+        $success = $this->model->insert($name, $from, $to, $created_by);
+
+        echo json_encode(array("success" => $success));
     }
 
     public function login() {

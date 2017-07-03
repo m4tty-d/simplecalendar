@@ -1,0 +1,20 @@
+footer {
+  text-align: center;
+  
+  i {
+    font-style: italic;
+  }
+  
+  a {
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      font-weight: bold;
+      transition: font-weight .5s ease-in-out;
+    }
+  }
+}

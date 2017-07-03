@@ -1,0 +1,27 @@
+// Typography
+
+$font-family : 'Crimson Text', serif;
+
+$h1 : 2.441em;
+$h2 : 1.953em;
+$h3 : 1.563em;
+$h4 : 1.25em;
+$h5 : 1em;
+$h6 : 0.8em;
+
+// Colors
+
+$eclipse : #373737;
+
+$primary-background : $eclipse;
+
+// Breakpoints
+
+$breakpoints: (
+        "mobile":        320px,
+        "mobile-wide":   480px,
+        "tablet":       768px,
+        "tablet-wide":  1024px,
+        "desktop":      1248px,
+        "desktop-wide": 1440px
+);

@@ -11,7 +11,7 @@ class Base_ctrl {
 
     public function loadModel($model) {
 
-        require MODEL_PATH . $model . '.php';
+        require_once MODEL_PATH . $model . '.php';
         $this->model = new $model();
 
     }

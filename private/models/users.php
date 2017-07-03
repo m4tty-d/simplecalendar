@@ -1,6 +1,6 @@
 <?php
 
-require 'base.php';
+require_once 'base.php';
 
 class Users extends BaseModel {
 
@@ -10,14 +10,20 @@ class Users extends BaseModel {
 
     }
 
+    public function getUserById($id) {
+
+        $sth = $this->db->prepare("select * from users where id = ?");
+        $sth->bindParam(1, $id);
+        $sth->execute();
+
+        return $sth->fetch();
+    }
+
     public function validate($username, $password) {
 
         $sth = $this->db->prepare("select * from users where username = ?");
-
         $sth->bindParam(1, $username);
-
         $sth->execute();
-
         $user = $sth->fetch();
 
         // username found

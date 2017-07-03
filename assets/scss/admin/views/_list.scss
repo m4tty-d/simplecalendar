@@ -1,0 +1,102 @@
+.top-section {
+  position: relative;
+  margin-top: 50px;
+  border-bottom: solid 2px black;
+
+  @include mq("tablet-wide", max) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background-color: white;
+    border: solid 2px black;
+    height: 41px;
+    width: 100px;
+    text-align: center;
+    line-height: 37px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: black;
+      color: white;
+
+      transition: all .5s ease-in-out;
+    }
+  }
+}
+
+table.events {
+  width: 100%;
+  min-width: 320px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  @include mq("tablet-wide", max) {
+    width: calc(100% - 20px);
+
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  thead {
+    font-weight: bold;
+
+    th {
+      display: none;
+      padding-bottom: 10px;
+
+      @include mq("mobile-wide") {
+        display: table-cell;
+      }
+    }
+  }
+  
+  tbody {
+    text-align: center;
+
+    tr {
+      border-top: solid 1px #e4e4e4;
+      border-bottom: solid 1px #e4e4e4;
+    }
+
+    td {
+      display: block;
+      padding: 5px 0;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          font-weight: bold;
+          transition: font-weight .5s ease-in-out;
+        }
+      }
+
+      &:before {
+        content: attr(data-th)": ";
+        font-weight: bold;
+
+        display: inline-block;
+
+        @include mq("mobile-wide") {
+          display: none;
+        }
+      }
+
+      &:last-child:before {
+        content: none;
+      }
+
+      @include mq("mobile-wide") {
+        display: table-cell;
+      }
+
+    }
+  }
+}
