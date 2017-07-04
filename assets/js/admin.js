@@ -54,3 +54,25 @@ $("[data-toggle='datepicker']").datepicker({
     weekStart: 1,
     autoHide: true
 });
+
+$(".delete_event").click(function(e) {
+    e.preventDefault();
+
+    var element = $(this);
+
+    var id = element.attr("data-event_id");
+
+    $.ajax({
+        type: "POST",
+        url: base_url + "admin/delete",
+        dataType: "json",
+        data: {id: id},
+        success: function(response) {
+            if (response.success) {
+                element.closest(".event").eq(0).fadeOut();
+            } else {
+                alert("Something went wrong!");
+            }
+        }
+    });
+});

@@ -20,12 +20,12 @@
                 if(isset($data['events'])) {
                     foreach($data['events'] as $event) {
                         ?>
-                        <tr>
+                        <tr class="event">
                             <td data-th="Title"><?= $event->title ?></td>
                             <td data-th="Start"><?= $event->start ?></td>
                             <td data-th="End"><?= $event->end ?></td>
                             <td data-th="Created by"><?= $event->username ?></td>
-                            <td><a href="">delete</a>  / <a href="">edit</a></td>
+                            <td><a class="delete_event" data-event_id="<?= $event->id ?>" href="#">delete</a>  / <a class="edit_event" data-event_id="<?= $event->id ?>" href="#">edit</a></td>
                         </tr>
                         <?php
                     }

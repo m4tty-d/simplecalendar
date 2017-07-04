@@ -58,6 +58,17 @@ class Admin_ctrl extends Base_ctrl {
         echo json_encode(array("success" => $success));
     }
 
+    public function delete() {
+
+        $event_id = $_POST['id'];
+
+        $this->loadModel('events');
+
+        $success = $this->model->delete($event_id);
+
+        echo json_encode(array("success" => $success));
+    }
+
     public function login() {
 
         $username = $_POST['username'];

@@ -1,6 +1,6 @@
 .top-section {
   position: relative;
-  margin-top: 50px;
+  margin-top: 20px;
   border-bottom: solid 2px black;
 
   @include mq("tablet-wide", max) {
@@ -77,6 +77,7 @@ table.events {
         color: black;
 
         &:hover {
+          cursor: pointer;
           text-decoration: underline;
           transition: font-weight .5s ease-in-out;
         }

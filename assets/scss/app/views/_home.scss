@@ -1,0 +1,47 @@
+#calendar {
+
+  margin-top: 20px;
+
+  @include mq("tablet-wide", max) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .fc-left {
+    h2 {
+      line-height: 42px;
+    }
+  }
+
+  td.fc-today {
+    background: #EFEFEF !important;
+  }
+
+  .fc-today-button {
+    background: transparent;
+    border: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.4em;
+    font-family: $font-family;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .fc-right {
+
+    .fc-button-group {
+      margin-top: 5px;
+    }
+
+  }
+
+  .fc-prev-button, .fc-next-button {
+    background: transparent;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+}
