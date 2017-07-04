@@ -68,12 +68,16 @@ table.events {
       display: block;
       padding: 5px 0;
 
+      @include mq("mobile-wide") {
+        display: table-cell;
+      }
+
       a {
         text-decoration: none;
         color: black;
 
         &:hover {
-          font-weight: bold;
+          text-decoration: underline;
           transition: font-weight .5s ease-in-out;
         }
       }
@@ -91,10 +95,6 @@ table.events {
 
       &:last-child:before {
         content: none;
-      }
-
-      @include mq("mobile-wide") {
-        display: table-cell;
       }
 
     }

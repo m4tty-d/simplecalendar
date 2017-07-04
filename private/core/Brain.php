@@ -16,15 +16,15 @@ class Brain {
 
         if( !$this->controller ) {
 
-            require CTRL_PATH . 'index_ctrl.php';
-            $index_page = new index_ctrl();
+            require CTRL_PATH . 'home_ctrl.php';
+            $index_page = new home_ctrl();
             $index_page->index();
 
         }
 
         // we check if the controller file exists
 
-        else if(file_exists( CTRL_PATH . $this->controller . '.php' )) {
+        else if(file_exists( CTRL_PATH . $this->controller . '.php' ) && $this->controller !== "base_ctrl") {
 
             require CTRL_PATH . $this->controller . '.php';
             $this->controller = new $this->controller();

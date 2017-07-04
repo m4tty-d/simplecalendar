@@ -7,9 +7,9 @@
     <table class="events">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>From</th>
-                <th>To</th>
+                <th>Title</th>
+                <th>Start</th>
+                <th>End</th>
                 <th>Created by</th>
                 <th></th>
             </tr>
@@ -21,10 +21,10 @@
                     foreach($data['events'] as $event) {
                         ?>
                         <tr>
-                            <td data-th="Name"><?= $event->name ?></td>
-                            <td data-th="From"><?= $event->from ?></td>
-                            <td data-th="To"><?= $event->to ?></td>
-                            <td data-th="Created by"><?= $event->created_by ?></td>
+                            <td data-th="Title"><?= $event->title ?></td>
+                            <td data-th="Start"><?= $event->start ?></td>
+                            <td data-th="End"><?= $event->end ?></td>
+                            <td data-th="Created by"><?= $event->username ?></td>
                             <td><a href="">delete</a>  / <a href="">edit</a></td>
                         </tr>
                         <?php
@@ -42,9 +42,9 @@
     <div class="background-overlay"></div>
     <form id="insert-form" type="post">
         <h1>New event</h1>
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="from" placeholder="From" data-toggle="datepicker">
-        <input type="text" name="to" placeholder="To" data-toggle="datepicker">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="start" placeholder="Start" data-toggle="datepicker">
+        <input type="text" name="end" placeholder="End" data-toggle="datepicker">
         <button type="submit">Save</button>
     </form>
 </div>

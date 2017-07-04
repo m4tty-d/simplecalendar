@@ -47,13 +47,13 @@ class Admin_ctrl extends Base_ctrl {
 
     public function insert() {
 
-        $name = $_POST['name'];
-        $from = $_POST['from'];
-        $to = $_POST['to'];
+        $title = $_POST['title'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
         $created_by = $_SESSION['user_id'];
 
         $this->loadModel('events');
-        $success = $this->model->insert($name, $from, $to, $created_by);
+        $success = $this->model->insert($title, $start, $end, $created_by);
 
         echo json_encode(array("success" => $success));
     }
