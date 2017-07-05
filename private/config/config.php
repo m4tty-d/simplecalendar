@@ -11,7 +11,7 @@ if(ENV === 'dev') {
 
 define('PROTOCOL', 'http://');
 define('DOMAIN', '192.168.0.35');
-define('SUBFOLDER', '/simplecalendar/'); // simply leave blank if your page is not in a subfolder
+define('SUBFOLDER', '/simplecalendar/'); // if your page is not in a subfolder, put a / here
 define('URL', PROTOCOL . DOMAIN . SUBFOLDER);
 
 // Database Settings
