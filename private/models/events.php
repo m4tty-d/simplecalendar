@@ -10,6 +10,15 @@ class Events extends BaseModel {
 
     }
 
+    public function getEventById($id) {
+
+        $sth = $this->db->prepare("select * from events where id = ?");
+        $sth->bindParam(1, $id);
+        $sth->execute();
+
+        return $sth->fetch();
+    }
+
     public function getAllEvents() {
 
         $sth = $this->db->prepare("select `events`.`id`, `title`, `start`, `end`, `created_by`, `users`.`username`, `users`.`first_name`, `users`.`last_name` from `events` left join `users` on `created_by` = `users`.`id`");
@@ -38,6 +47,18 @@ class Events extends BaseModel {
          $success = $sth->execute();
 
          return $success;
+    }
+
+    public function edit($id, $title, $start, $end) {
+        $sth = $this->db->prepare("update events set title = ?, start = ?, end = ? where id = ?");
+        $sth->bindParam(1, $title);
+        $sth->bindParam(2, $start);
+        $sth->bindParam(3, $end);
+        $sth->bindParam(4, $id);
+
+        $success = $sth->execute();
+
+        return $success;
     }
 
 }

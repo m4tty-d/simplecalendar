@@ -69,6 +69,19 @@ class Admin_ctrl extends Base_ctrl {
         echo json_encode(array("success" => $success));
     }
 
+    public function edit() {
+
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
+
+        $this->loadModel('events');
+        $success = $this->model->edit($id, $title, $start, $end);
+
+        echo json_encode(array("success" => $success));
+    }
+
     public function login() {
 
         $username = $_POST['username'];

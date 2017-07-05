@@ -5,7 +5,7 @@ $(document).ready(function () {
             url: base_url + "home/provideEventData",
             type: "POST",
             error: function () {
-                alert("We couldn't fetch the events... :( Try later!");
+                alert("Couldn't fetch the events... :( Try later!");
             }
         },
         eventColor: 'black',

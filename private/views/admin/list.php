@@ -38,13 +38,25 @@
     </table>
 </div>
 
-<div class="insert-box">
+<div id="insert-box" class="overlay-popup">
     <div class="background-overlay"></div>
     <form id="insert-form" type="post">
         <h1>New event</h1>
         <input type="text" name="title" placeholder="Title">
         <input type="text" name="start" placeholder="Start" data-toggle="datepicker">
         <input type="text" name="end" placeholder="End" data-toggle="datepicker">
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+<div id="edit-box" class="overlay-popup">
+    <div class="background-overlay"></div>
+    <form id="edit-form" type="post">
+        <h1>Edit event</h1>
+        <input type="hidden" name="id" id="event-id">
+        <input type="text" name="title" id="event-title" placeholder="Title">
+        <input type="text" name="start" id="event-start" placeholder="Start" data-toggle="datepicker">
+        <input type="text" name="end" id="event-end" placeholder="End" data-toggle="datepicker">
         <button type="submit">Save</button>
     </form>
 </div>
