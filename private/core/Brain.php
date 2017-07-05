@@ -46,8 +46,9 @@ class Brain {
                 }
 
             } else {
-
+                require VIEW_PATH . 'metas.php';
                 require VIEW_PATH . '404.php';
+                require VIEW_PATH . 'end.php';
             }
 
         }
@@ -56,7 +57,9 @@ class Brain {
 
         else {
 
+            require VIEW_PATH . 'metas.php';
             require VIEW_PATH . '404.php';
+            require VIEW_PATH . 'end.php';
 
         }
 
